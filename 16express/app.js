@@ -5,7 +5,12 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
+
+//调用路由目录下的两个文件
 var routes = require('./routes/index');
+
+
 var users = require('./routes/users');
 
 var app = express();
@@ -34,6 +39,8 @@ app.use(function(req, res, next) {
 
 /// error handlers
 
+
+//列出具体错误
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -46,12 +53,15 @@ if (app.get('env') === 'development') {
     });
 }
 
+
+
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
+        //err为null
         error: {}
     });
 });
