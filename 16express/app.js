@@ -17,6 +17,7 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+//设置view 引擎为jade
 app.set('view engine', 'jade');
 
 app.use(favicon());
